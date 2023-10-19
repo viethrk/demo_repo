@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./regis.js"></script>
+    <style>
+      .input-regist {
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="margin-bottom: 20px">Đăng ký mới</header>
+    <fieldset style="width: fit-content">
+      <legend>Thông tin đăng ký</legend>
+      <div class="input-regist">
+        <label for="email">Email</label>
+        <input type="text" name="" id="email" />
+      </div>
+      <div class="input-regist">
+        <label for="user-name">User name</label>
+        <input type="text" name="" id="user-name" />
+      </div>
+      <div class="input-regist">
+        <label for="password">Password</label>
+        <input type="text" name="" id="password" />
+      </div>
+      <div class="input-regist">
+        <label for="confirm-password">Confirm password</label>
+        <input type="text" name="" id="confirm-password" />
+      </div>
+      <div class="input-regist">
+        <div>
+          <input type="radio" name="gender" id="male" />
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input type="radio" name="gender" id="female" />
+          <label for="female">Female</label>
+        </div>
+      </div>
+      <button onclick="regisUser()">Đăng ký mới</button>
+    </fieldset>
+  </body>
+</html>

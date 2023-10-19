@@ -1,3 +1,5 @@
 const regisUser = () => {
-  window.open("../login/login.html", "_self");
+  window.isLogin = true;
+  console.log(isLogin);
+  window.open("/pages/product/products.html", "_self");
 };

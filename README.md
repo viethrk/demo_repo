@@ -1,6 +1,3 @@
-<input name="input-name">
-document.querySelector('input[name="input-name"]')
-
 # demo_repo dùng cú pháp của es6
 
 ## Website bán hàng

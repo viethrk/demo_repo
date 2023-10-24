@@ -1,9 +1,13 @@
+const showDetail = (id) => {
+  localStorage.setItem("id_detail", id);
+  window.open("pages/product/detail/detail.html", "_self");
+};
+
 const showProducts = () => {
   const products = getProducts();
 
   let render = "";
-  for (let index = 0; index < products.length; index++) {
-    const product = products[index];
+  for (const product of products) {
     render += `
     <div class="col-4 mb-3">
       <div class="px-2 card hover-zoom">
@@ -11,7 +15,7 @@ const showProducts = () => {
         <div class="card-body">
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button class="btn btn-primary">Xem chi tiết</button>
+          <button class="btn btn-primary" onclick="showDetail(${product.id})">Xem chi tiết</button>
         </div>
       </div>
     </div>

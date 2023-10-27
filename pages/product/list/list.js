@@ -50,9 +50,19 @@ const searchProduct = () => {
 
   const listProduct = getProducts();
 
-  const listRender = listProduct.filter((item) =>
-    item.name.includes(`${valueSearch}`)
-  );
+  // const listRender = listProduct.filter((item) =>
+  //   item.name.includes(`${valueSearch}`)
+  // );
+
+  const listRender = [];
+
+  for (let index = 0; index < listProduct.length; index++) {
+    if (listProduct[index].name.includes(`${valueSearch}`)) {
+      listRender.push(listProduct[index]);
+    }
+  }
 
   showProducts(listRender);
 };
+
+const filterByCattegory = (category_id) => {};

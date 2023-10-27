@@ -20,44 +20,60 @@ const product = {
 const products = [
   {
     ...product,
+    name: "sản phảm aaaa1",
   },
   {
     ...product,
     id: "2",
+    name: "sản phảm aaaa2",
   },
   {
     ...product,
     id: 3,
+    name: "sản phảm aaaa3",
   },
   {
     ...product,
     id: 4,
     category_id: 2,
+    name: "sản phảm aaaa3",
   },
   {
     ...product,
     id: 5,
     category_id: 2,
+    name: "sản phảm aaaa4",
   },
   {
     ...product,
     id: 6,
     category_id: 2,
+    name: "sản phảm aaaa5",
   },
   {
     ...product,
     id: 7,
     category_id: 2,
+    name: "sản phảm aaaa1",
   },
 ];
 
-localStorage.setItem("products", JSON.stringify(products));
-localStorage.setItem("categorys", JSON.stringify(categorys));
-
 const getProducts = () => {
-  return JSON.parse(localStorage.getItem("products"));
+  return JSON.parse(localStorage.getItem("products")) ?? [];
 };
 
 const getCategorys = () => {
-  return JSON.parse(localStorage.getItem("categorys"));
+  return JSON.parse(localStorage.getItem("categorys")) ?? [];
+};
+
+const initData = () => {
+  const productsCheck = getProducts();
+  if (productsCheck.length == 0) {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+
+  const categorysCheck = getCategorys();
+  if (categorysCheck.length == 0) {
+    localStorage.setItem("categorys", JSON.stringify(categorys));
+  }
 };

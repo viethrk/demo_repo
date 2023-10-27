@@ -3,9 +3,7 @@ const showDetail = (id) => {
   window.open("pages/product/detail/detail.html", "_self");
 };
 
-const showProducts = () => {
-  const products = getProducts();
-
+const showProducts = (products) => {
   let render = "";
   for (const product of products) {
     render += `
@@ -42,4 +40,16 @@ const renderDropdown = () => {
   `;
 
   document.getElementById("category").innerHTML = dropdow;
+};
+
+const searchProduct = () => {
+  const valueSearch = document.getElementById("search").value;
+
+  const listProduct = getProducts();
+
+  const listRender = listProduct.filter((item) =>
+    item.name.includes(`${valueSearch}`)
+  );
+
+  showProducts(listRender);
 };

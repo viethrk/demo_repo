@@ -48,8 +48,11 @@
     <script src="../../../common/js/initProduct.js"></script>
     <script src="./list.js"></script>
     <script>
+      initData();
       includeHTML();
-      showProducts();
+      const productsShow = getProducts();
+
+      showProducts(productsShow);
       renderDropdown();
     </script>
   </body>

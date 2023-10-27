@@ -33,12 +33,12 @@ const renderDropdown = () => {
 
   categorys.forEach((category) => {
     render += `
-      <li><a class="dropdown-item" href="#">${category.name}</a></li>
+      <li><a class="dropdown-item" href="#" onclick="filterByCattegory(${category.id})">${category.name}</a></li>
     `;
   });
 
   const dropdow = `
-  <li><a class="dropdown-item active" href="#">Tất cả</a></li>
+  <li><a class="dropdown-item active" href="#" onclick="filterByCattegory()">Tất cả</a></li>
   ${render}
   `;
 
@@ -65,4 +65,20 @@ const searchProduct = () => {
   showProducts(listRender);
 };
 
-const filterByCattegory = (category_id) => {};
+const filterByCattegory = (category_id) => {
+  const listProduct = getProducts();
+  if (!category_id) {
+    showProducts(listProduct);
+    return;
+  }
+
+  const listRender = [];
+
+  for (let index = 0; index < listProduct.length; index++) {
+    if (listProduct[index].category_id == category_id) {
+      listRender.push(listProduct[index]);
+    }
+  }
+
+  showProducts(listRender);
+};

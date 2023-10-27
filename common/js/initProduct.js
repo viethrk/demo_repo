@@ -21,6 +21,8 @@ const products = [
   {
     ...product,
     name: "sản phảm aaaa1",
+    image:
+      "https://down-vn.img.susercontent.com/file/sg-11134201-23020-7sf0mvmbjgnv97",
   },
   {
     ...product,

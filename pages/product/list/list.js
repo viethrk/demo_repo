@@ -1,6 +1,9 @@
 const showDetail = (id) => {
   localStorage.setItem("id_detail", id);
-  window.open("pages/product/detail/detail.html", "_self");
+  window.open(
+    `${window.location.origin}/pages/product/detail/detail.html`,
+    "_self"
+  );
 };
 
 const showProducts = (products) => {
